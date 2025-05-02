@@ -41,6 +41,7 @@ const App = () => {
   ]);
 
   const [currentIndex, setCurrentIndex] = useState(0)
+  console.log(currentIndex)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -51,7 +52,7 @@ const App = () => {
     }, 3000);
 
     return () => clearInterval(timer);
-  }, [imageData.length]);
+  }, [currentIndex]); //changed this later
   
 
   const slideImage = (direction) => {
@@ -67,8 +68,6 @@ const App = () => {
     }
     
   }
-
-
 
   return (
     <div className="app">
